@@ -8,4 +8,16 @@ export default class Tile {
   toString() {
     return `${this.suit}-${this.value}${this.isRed ? "-red" : ""}`;
   }
+   isHonor() {
+    return this.suit === "honor";
+  }
+
+  equals(otherTile) {
+    return (
+      otherTile &&
+      this.suit === otherTile.suit &&
+      this.value === otherTile.value &&
+      this.isRed === otherTile.isRed
+    );
+  }
 }
